@@ -5,16 +5,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\ProfileController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -32,6 +24,8 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
+// Middleware Start ----------------------------------------------------------------
+
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard');
 
@@ -44,10 +38,5 @@ Route::middleware(['auth', 'role:agent'])->group(function (){
 
 }); // End Agent group Middleware
 
-// Route::middleware(['auth', 'role:user'])->group(function (){
-
-//     Route::get('/user/dashboard', [UserController::class, 'UserDashboard'])->name('user.dashboard');
-
-// }); // End User Group Middleware
 
 
