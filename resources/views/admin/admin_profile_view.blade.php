@@ -36,7 +36,9 @@
               <label class="tx-11 fw-bolder mb-0 text-uppercase">Address:</label>
               <p class="text-muted">{{ $profileData->address }}</p>
             </div>
-            <div class="mt-3 d-flex social-links">
+
+            
+            {{-- <div class="mt-3 d-flex social-links">
               <a href="javascript:;" class="btn btn-icon border btn-xs me-2">
                 <i data-feather="github"></i>
               </a>
@@ -46,7 +48,8 @@
               <a href="javascript:;" class="btn btn-icon border btn-xs me-2">
                 <i data-feather="instagram"></i>
               </a>
-            </div>
+            </div> --}}
+
           </div>
         </div>
       </div>
@@ -58,48 +61,50 @@
     <div class="card">
         <div class="card-body">
 
-                            <h6 class="card-title">Update Admin profile</h6>
+                <h6 class="card-title">Update Admin profile</h6>
 
-                            <form class="forms-sample">
-                                <div class="mb-3">
-                                    <label for="exampleInputUsername1" class="form-label">Username</label>
-                    <input type="text" name="username" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{ $profileData->username }}">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Name</label>
-                    <input type="text" name="name" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{ $profileData->name }}">
-                                </div>
+                <form method="POST" action="{{ route('admin.profile.store') }}" class="forms-sample" enctype="multipart/form-data">
+                    @csrf
 
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Email</label>
-                    <input type="email" name="email" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{ $profileData->email }}">
-                                </div>
+                    <div class="mb-3">
+                        <label for="exampleInputUsername1" class="form-label">Username</label>
+                        <input type="text" name="username" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{ $profileData->username }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Name</label>
+                        <input type="text" name="name" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{ $profileData->name }}">
+                    </div>
 
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Phone</label>
-                    <input type="text" name="phone" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{ $profileData->phone }}">
-                                </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{ $profileData->email }}">
+                    </div>
 
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Address</label>
-                    <input type="text" name="address" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{ $profileData->address }}">
-                                </div>
-                               
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Photo</label>
-                    <input class="form-control" name="photo" type="file" id="image">
-                                </div>
-                               
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Photo</label>
-                                    <img id="showImage" class="wd-80 rounded-circle" src="{{ (!empty($profileData->photo)) ? url('upload/admin_images/'.$profileData->photo) : url('upload/no_image.jpg') }}" alt="profile">
-                                </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Phone</label>
+                        <input type="text" name="phone" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{ $profileData->phone }}">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Address</label>
+                        <input type="text" name="address" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{ $profileData->address }}">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Photo</label>
+                        <input class="form-control" name="photo" type="file" id="image">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label"></label>
+                        <img id="showImage" class="wd-80 rounded-circle" src="{{ (!empty($profileData->photo)) ? url('upload/admin_images/'.$profileData->photo) : url('upload/no_image.jpg') }}" alt="profile">
+                    </div>
 
 
-                            
-                                <button type="submit" class="btn btn-primary me-2">Save Chenges</button>
-                                
-                            </form>
+                
+                    <button type="submit" class="btn btn-primary me-2">Save Chenges</button>
+                    
+                </form>
 
         </div>
     </div>

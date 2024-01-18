@@ -193,7 +193,7 @@
                         <h6 class="text-body mb-2">Leonardo Payne</h6>
                         <p class="text-muted tx-12">12.30 PM</p>
                     </div>
-                    <p class="text-muted tx-13">Hey! there I'm available...</p>
+                    <p class="text-muted tx-13">No there is no available right now</p>
                     </div>
                 </a>
                 <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
@@ -205,7 +205,7 @@
                         <h6 class="text-body mb-2">Carl Henson</h6>
                         <p class="text-muted tx-12">02.14 AM</p>
                     </div>
-                    <p class="text-muted tx-13">I've finished it! See you so..</p>
+                    <p class="text-muted tx-13">I have been finish yeat right now! So wait..</p>
                     </div>
                 </a>
                 <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
