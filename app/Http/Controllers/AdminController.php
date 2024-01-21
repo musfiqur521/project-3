@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\RedirectResponse;
 
 class AdminController extends Controller
@@ -67,6 +68,50 @@ class AdminController extends Controller
         );
 
         return redirect()->back()->with($notification);
+
+    }// End Method
+
+    public function AdminChengePassword(Request $request){
+
+        $id = Auth::user()->id;
+        $profileData = User::find($id);
+
+        return view('admin.admin_chenge_password',compact('profileData'));
+
+    }// End Method
+
+    public function AdminUpdatePassword(Request $request){
+
+        //Validation
+        $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required|confirmed',
+        ]);
+
+        // Match The Old Password
+        if (!Hash::check($request->old_password, auth::user()->password)) {
+            
+            $notification = array(
+                'message' => 'Old Password Does Not Match',
+                'alert-type' => 'error'
+            );
+
+            return back()->with($notification);
+        }
+           
+        //Update The New PAassword
+        User::whereId(auth()->user()->id)->update([
+
+            'password' => Hash::make($request->new_password),
+
+        ]);
+
+        $notification = array(
+            'message' => 'Password Chenge Successfully Done',
+            'alert-type' => 'success'
+        );
+
+        return back()->with($notification); 
 
     }// End Method
 

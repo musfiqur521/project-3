@@ -195,7 +195,7 @@
 
             @php
               $id = Auth::user()->id;
-              $Data = App\Models\User::find($id);
+              $profileData = App\Models\User::find($id);
             @endphp
 
 
@@ -213,32 +213,32 @@
                             <p class="tx-12 text-muted">{{ $profileData->email }}</p>
                         </div>
                     </div>
-    <ul class="list-unstyled p-1">
-      <li class="dropdown-item py-2">
-        <a href="{{ route('admin.profile') }}" class="text-body ms-0">
-          <i class="me-2 icon-md" data-feather="user"></i>
-          <span>Profile</span>
-        </a>
-      </li>
-      <li class="dropdown-item py-2">
-        <a href="javascript:;" class="text-body ms-0">
-          <i class="me-2 icon-md" data-feather="edit"></i>
-          <span>Edit Profile</span>
-        </a>
-      </li>
-      <li class="dropdown-item py-2">
-        <a href="javascript:;" class="text-body ms-0">
-          <i class="me-2 icon-md" data-feather="repeat"></i>
-          <span>Switch User</span>
-        </a>
-      </li>
-      <li class="dropdown-item py-2">
-        <a href="{{ route('admin.logout') }}" class="text-body ms-0">
-          <i class="me-2 icon-md" data-feather="log-out"></i>
-          <span>Log Out</span>
-        </a>
-      </li>
-    </ul>
+                      <ul class="list-unstyled p-1">
+                        <li class="dropdown-item py-2">
+                          <a href="{{ route('admin.profile') }}" class="text-body ms-0">
+                            <i class="me-2 icon-md" data-feather="user"></i>
+                            <span>Profile</span>
+                          </a>
+                        </li>
+                        <li class="dropdown-item py-2">
+                          <a href="{{ route('admin.chenge.password') }}" class="text-body ms-0">
+                            <i class="me-2 icon-md" data-feather="edit"></i>
+                            <span>Chenge Password</span>
+                          </a>
+                        </li>
+                        <li class="dropdown-item py-2">
+                          <a href="javascript:;" class="text-body ms-0">
+                            <i class="me-2 icon-md" data-feather="repeat"></i>
+                            <span>Switch User</span>
+                          </a>
+                        </li>
+                        <li class="dropdown-item py-2">
+                          <a href="{{ route('admin.logout') }}" class="text-body ms-0">
+                            <i class="me-2 icon-md" data-feather="log-out"></i>
+                            <span>Log Out</span>
+                          </a>
+                        </li>
+                      </ul>
                 </div>
             </li>
         </ul>
