@@ -51,22 +51,9 @@
        
         <div class="sidebar-widget category-widget">
             <div class="widget-title">
-                <h4>Category</h4>
+              
             </div>
-            <div class="widget-content">
-                <ul class="category-list ">
-                   
-    <li class="current">  <a href="blog-details.html"><i class="fab fa fa-envelope "></i> Dashboard </a></li>
-
-
-    <li><a href="blog-details.html"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a></li>
-    <li><a href="blog-details.html"><i class="fa fa-credit-card" aria-hidden="true"></i> Buy credits<span class="badge badge-info">( 10 credits)</span></a></li>
-    <li><a href="blog-details.html"><i class="fa fa-list-alt" aria-hidden="true"></i></i> Properties </a></li>
-    <li><a href="blog-details.html"><i class="fa fa-indent" aria-hidden="true"></i> Add a Property  </a></li>
-    <li><a href="blog-details.html"><i class="fa fa-key" aria-hidden="true"></i> Security </a></li>
-    <li><a href="blog-details.html"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i> Logout </a></li>
-                </ul>
-            </div>
+          @include('frontend.dashboard.dashboard_sidebar')
           </div> 
                          
                         </div>
@@ -75,7 +62,7 @@
 
 
 
-  <div class="col-lg-8 col-md-12 col-sm-12 content-side">
+                    <div class="col-lg-8 col-md-12 col-sm-12 content-side">
                         <div class="blog-details-content">
                             <div class="news-block-one">
                                 <div class="inner-box">
@@ -87,33 +74,33 @@
           
 
 
-<div class="row">
-<div class="col-lg-4">
-    <div class="card-body" style="background-color: #1baf65;">
-    <h1 class="card-title" style="color: white; font-weight: bold;">0</h1>
-    <h5 class="card-text"style="color: white;"> Approved properties</h5>
-    
-  </div>
-</div>
+                                        <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="card-body" style="background-color: #1baf65;">
+                                            <h1 class="card-title" style="color: white; font-weight: bold;">0</h1>
+                                            <h5 class="card-text"style="color: white;"> Approved properties</h5>
+                                            
+                                        </div>
+                                        </div>
 
-<div class="col-md-4">
-    <div class="card-body" style="background-color: #ffc107;">
-    <h1 class="card-title" style="color: white; font-weight: bold; ">0</h1>
-    <h5 class="card-text"style="color: white;"> Pending approve properties</h5>
-    
-  </div>
-</div>
+                                        <div class="col-md-4">
+                                            <div class="card-body" style="background-color: #ffc107;">
+                                            <h1 class="card-title" style="color: white; font-weight: bold; ">0</h1>
+                                            <h5 class="card-text"style="color: white;"> Pending approve properties</h5>
+                                            
+                                        </div>
+                                        </div>
 
 
-<div class="col-md-4">
-    <div class="card-body" style="background-color: #002758;">
-    <h1 class="card-title" style="color: white; font-weight: bold;">0</h1>
-    <h5 class="card-text"style="color: white; "> Rejected properties</h5>
-    
-  </div>
-</div>
-    
-</div> 
+                                        <div class="col-md-4">
+                                            <div class="card-body" style="background-color: #002758;">
+                                            <h1 class="card-title" style="color: white; font-weight: bold;">0</h1>
+                                            <h5 class="card-text"style="color: white; "> Rejected properties</h5>
+                                            
+                                        </div>
+                                        </div>
+                                            
+                                        </div> 
 
                                     </div>
                                 </div>
@@ -123,7 +110,7 @@
                         </div>
 
 
-    <div class="blog-details-content">
+                        <div class="blog-details-content">
                             <div class="news-block-one">
                                 <div class="inner-box">
                                     
