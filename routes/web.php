@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Controllers\Backend\PropertyController;
 use App\Http\Controllers\Backend\PropertyTypeController;
 
@@ -63,7 +64,11 @@ Route::middleware(['auth', 'role:agent'])->group(function (){
 }); // End Agent group Middleware
 
 
-Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
+Route::get('/agent/login', [AgentController::class, 'AgentLogin'])->name('agent.login')->middleware(RedirectIfAuthenticated::class);
+
+Route::post('/agent/register', [AgentController::class, 'AgentRegister'])->name('agent.register');
+
+Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login')->middleware(RedirectIfAuthenticated::class);
 
 
 
