@@ -1,7 +1,7 @@
 <nav class="sidebar">
     <div class="sidebar-header">
       <a href="#" class="sidebar-brand">
-        MUSFIQUR<span>PRO</span>
+        Admin<span>Dashboard</span>
       </a>
       <div class="sidebar-toggler not-active">
         <span></span>
