@@ -73,39 +73,155 @@
 
 
                 <div class="row">
+                    <div class="col-sm-3">
+                        <div class="mb-3">
+                            <label class="form-label">BedRooms</label>
+                            <input type="text" class="form-control" name="bedrooms">
+                        </div>
+                    </div><!-- Col -->
+                    <div class="col-sm-3">
+                        <div class="mb-3">
+                            <label class="form-label">Bthrooms</label>
+                            <input type="text" class="form-control" name="bathrooms">
+                        </div>
+                    </div><!-- Col -->
+                    <div class="col-sm-3">
+                        <div class="mb-3">
+                            <label class="form-label">Garage</label>
+                            <input type="text" class="form-control" name="garage">
+                        </div>
+                    </div><!-- Col -->
+
+                    <div class="col-sm-3">
+                        <div class="mb-3">
+                            <label class="form-label">Garage Size</label>
+                            <input type="text" class="form-control" name="garage_size">
+                        </div>
+                    </div><!-- Col -->
+
+                </div><!-- Row -->
+
+
+
+                <div class="row">
                     <div class="col-sm-4">
+                        <div class="mb-3">
+                            <label class="form-label">Property Size</label>
+                            <input type="text" class="form-control" name="property_size">
+                        </div>
+                    </div><!-- Col -->
+                    <div class="col-sm-4">
+                        <div class="mb-3">
+                            <label class="form-label">Property Video</label>
+                            <input type="text" class="form-control" name="property_video">
+                        </div>
+                    </div><!-- Col -->
+                    <div class="col-sm-4">
+                        <div class="mb-3">
+                            <label class="form-label">Neighborhood</label>
+                            <input type="text" class="form-control" name="neighborhood">
+                        </div>
+                    </div><!-- Col -->
+
+                </div><!-- Row -->
+
+
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="mb-3">
+                            <label class="form-label">Address</label>
+                            <input type="text" class="form-control" name="address">
+                        </div>
+                    </div><!-- Col -->
+                    <div class="col-sm-3">
                         <div class="mb-3">
                             <label class="form-label">City</label>
-                            <input type="text" class="form-control" placeholder="Enter city">
+                            <input type="text" class="form-control" name="city">
                         </div>
                     </div><!-- Col -->
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                         <div class="mb-3">
                             <label class="form-label">State</label>
-                            <input type="text" class="form-control" placeholder="Enter state">
+                            <input type="text" class="form-control" name="state">
                         </div>
                     </div><!-- Col -->
-                    <div class="col-sm-4">
+
+                    <div class="col-sm-3">
                         <div class="mb-3">
-                            <label class="form-label">Zip</label>
-                            <input type="text" class="form-control" placeholder="Enter zip code">
+                            <label class="form-label">Postal Code</label>
+                            <input type="text" class="form-control" name="postal_code">
                         </div>
                     </div><!-- Col -->
+
                 </div><!-- Row -->
+
+
+
+
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="mb-3">
-                            <label class="form-label">Email address</label>
-                            <input type="email" class="form-control" placeholder="Enter email">
+                            <label class="form-label">Latitude</label>
+                            <input type="text" name="latitude" class="form-control">
+                            <a href="https://www.latlong.net/convert-address-to-lat-long.html" target="_blank">Go here to get Latitude from address</a>
                         </div>
                     </div><!-- Col -->
                     <div class="col-sm-6">
                         <div class="mb-3">
-                            <label class="form-label">Password</label>
-                            <input type="password" class="form-control" autocomplete="off" placeholder="Password">
+                            <label class="form-label">Longtitude</label>
+                            <input type="text" name="longtitude" class="form-control">
+                            <a href="https://www.latlong.net/convert-address-to-lat-long.html" target="_blank">Go here to get Longtitude from address</a>
                         </div>
                     </div><!-- Col -->
                 </div><!-- Row -->
+
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="mb-3">
+                            <label class="form-label">Property Type</label>
+                            <select name="ptype_id" class="form-select" id="exampleFormControlSelect1">
+                                <option selected="" disabled="">Select Status</option>
+                                @foreach ($propertytype as $ptype)
+                                <option value="{{ $ptype->id }}">{{ $ptype->type_name }}</option>
+                                @endforeach
+                                
+                            </select>
+                        </div>
+                    </div><!-- Col -->
+                    <div class="col-sm-4">
+                        <div class="mb-3">
+                            <label class="form-label">Property Amenities</label>
+                            <select name="amenities_id[]" class="js-example-basic-multiple form-select" multiple="multiple" data-width="100%">
+
+                                @foreach ($amenities as $amenity)
+                                <option value="{{ $amenity->id }}">{{ $amenity->amenities_name }}</option>
+                                @endforeach
+
+                            </select>
+                        </div>
+                    </div><!-- Col -->
+                    <div class="col-sm-4">
+                        <div class="mb-3">
+                            <label class="form-label">Agent</label>
+                            <select name="agent_id" class="form-select" id="exampleFormControlSelect1">
+                                <option selected="" disabled="">Select Agent</option>
+                                @foreach ($activeAgent as $agent)
+                                <option value="{{ $agent->id }}">{{ $agent->name }}</option>
+                                @endforeach
+                                
+                            </select>
+                        </div>
+                    </div><!-- Col -->
+
+                </div><!-- Row -->
+
+
+
+
+
+
             </form>
             <button type="button" class="btn btn-primary submit">Submit form</button>
     </div>

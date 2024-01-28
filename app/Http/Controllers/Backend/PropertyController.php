@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Models\User;
 use App\Models\Property;
+use App\Models\Amenities;
+use App\Models\PropertyType;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -17,7 +20,11 @@ class PropertyController extends Controller
 
     public function AddProperty(){
 
-        return view('backend.property.add_property');
+        $propertytype = PropertyType::latest()->get();
+        $amenities = Amenities::latest()->get();
+        $activeAgent = User::where('status','active')->where('role','agent')->latest()->get();
+
+        return view('backend.property.add_property', compact('propertytype','amenities','activeAgent'));
     
     }// End method
 }
