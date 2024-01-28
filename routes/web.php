@@ -120,5 +120,14 @@ Route::controller(PropertyTypeController::class)->group(function(){
 
 
 
+     /// Agent All Routes
+     Route::controller(AdminController::class)->group(function(){
+
+        Route::get('/all/agent','AllAgent')->name('all.agent');
+        
+    
+    });
+
+
 }); // End Admin Group Middleware
 
