@@ -13,18 +13,20 @@
 <div class="card">
     <div class="card-body">
         <h6 class="card-title">Add Property</h6>
-            <form>
-
+            
+        
+        <form method="POST" action="" id="myForm" enctype="multipart/form-data">
+            @csrf
 
                 <div class="row">
                     <div class="col-sm-6">
-                        <div class="mb-3">
+                        <div class="form-group mb-3">
                             <label class="form-label">Property Name</label>
                             <input type="text" name="property_name" class="form-control">
                         </div>
                     </div><!-- Col -->
                     <div class="col-sm-6">
-                        <div class="mb-3">
+                        <div class="form-group mb-3">
                             <label class="form-label">Property Status</label>
                             <select name="property_status" class="form-select" id="exampleFormControlSelect1">
                     <option selected="" disabled="">Select Status</option>
@@ -35,21 +37,21 @@
                     </div><!-- Col -->
 
                     <div class="col-sm-6">
-                        <div class="mb-3">
+                        <div class="form-group mb-3">
                             <label class="form-label">Lowest Price</label>
                             <input type="text" name="lowest_price" class="form-control">
                         </div>
                     </div><!-- Col -->
 
                     <div class="col-sm-6">
-                        <div class="mb-3">
+                        <div class="form-group mb-3">
                             <label class="form-label">Max Price</label>
                             <input type="text" name="max_price" class="form-control">
                         </div>
                     </div><!-- Col -->
 
                     <div class="col-sm-6">
-                        <div class="mb-3">
+                        <div class="form-group mb-3">
                             <label class="form-label">Main Thambnail</label>
                             <input type="file" name="property_thambnail" class="form-control" onchange="mainThamUrl(this)">
 
@@ -59,7 +61,7 @@
 
                     <div class="col-sm-6">
                         <div class="mb-3">
-                            <label class="form-label">Multiple Image</label>
+                            <label class="form-group form-label">Multiple Image</label>
                             <input type="file" name="multi_img[]" id="multiImg" class="form-control" multiple="">
 
                             <div class="row" id="preview_img"></div>
@@ -284,8 +286,9 @@
             </div>
         </div> <!---end row-->
 
-            </form>
-            <button type="button" class="btn btn-primary submit">Save Chenges</button>
+        <button type="submit" class="btn btn-primary">Save Chenges</button>
+
+            </form>           
     </div>
 </div>
 
@@ -363,15 +366,51 @@
             $(document).ready(function (){
                 $('#myForm').validate({
                     rules: {
-                        amenities_name: {
+                        property_name: {
                             required : true,
                         }, 
+                        property_status: {
+                            required : true,
+                        }, 
+                        lowest_price: {
+                            required : true,
+                        }, 
+                        max_price: {
+                            required : true,
+                        }, 
+                        property_thambnail: {
+                            required : true,
+                        }, 
+                        multi_img: {
+                            required : true,
+                        },
+                        ptype_id: {
+                            required : true,
+                        },
                         
                     },
                     messages :{
-                        amenities_name: {
-                            required : 'Please Enter Amenities Name',
+                        property_name: {
+                            required : 'Please Enter Property Name',
                         }, 
+                        property_status: {
+                            required : 'Please Select Property Status',
+                        }, 
+                        lowest_price: {
+                            required : 'Please Enter Lowest Price',
+                        }, 
+                        max_price: {
+                            required : 'Please Enter Max Price',
+                        }, 
+                        property_thambnail: {
+                            required : 'Please Select Property Thambnail',
+                        }, 
+                        multi_img: {
+                            required : 'Please Select Multiple Image',
+                        },
+                        ptype_id: {
+                            required : 'Please Select Property Type',
+                        },
                          
         
                     },
