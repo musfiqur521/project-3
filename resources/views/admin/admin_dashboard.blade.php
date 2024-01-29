@@ -136,6 +136,10 @@
 
 	  <!-- Multi Input Tag End -->
 
+	  <!-- TinyMCE Description -->
+	  <script src="{{ asset('backend/assets/vendors/tinymce/tinymce.min.js') }}"></script> 
+	  <script src="{{ asset('backend/assets/js/tinymce.js') }}"></script>
+	  <!-- TinyMCE Description End -->
 
 </body>
 </html>    

@@ -3,11 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Agent\AgentPropertyController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Controllers\Backend\PropertyController;
 use App\Http\Controllers\Backend\PropertyTypeController;
+
 
 
 
@@ -137,4 +139,20 @@ Route::controller(PropertyTypeController::class)->group(function(){
 
 
 }); // End Admin Group Middleware
+
+//Agent Property Group Middleware
+Route::middleware(['auth', 'role:agent'])->group(function (){
+
+   /// Agent All Property 
+   Route::controller(AgentPropertyController::class)->group(function(){
+
+    Route::get('/agent/all/agent','AgentAllProperty')->name('agent.all.property');
+   
+    
+
+});
+    
+   
+
+}); // End Agent Property group Middleware
 

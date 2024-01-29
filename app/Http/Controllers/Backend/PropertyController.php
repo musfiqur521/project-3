@@ -26,5 +26,5 @@ class PropertyController extends Controller
 
         return view('backend.property.add_property', compact('propertytype','amenities','activeAgent'));
     
-    }// End method
+    }// End method 
 }
